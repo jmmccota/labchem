@@ -1,4 +1,3 @@
-import React from 'react';
 import { BlogType, PageContentType } from './types';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -41,7 +40,7 @@ function BlogComponent({ title, content, date, imgUrls }: PageContentType) {
         }}
       >
         <Typography variant="h4">{title}</Typography>
-        {date && <Typography variant="subtitle2">{date}</Typography>}
+        {date && <Typography variant="subtitle2">{date.toString()}</Typography>}
       </Box>
 
       {imgUrls && (

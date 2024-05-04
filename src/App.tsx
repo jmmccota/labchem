@@ -3,8 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
   createTheme,
-  responsiveFontSizes,
-  ThemeProvider as ThemeProvider2,
+  responsiveFontSizes
 } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material';
 import '@fontsource/roboto/300.css';

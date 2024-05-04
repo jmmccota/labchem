@@ -1,4 +1,3 @@
-import React from 'react';
 import { PageContentType } from './types';
 import axios from 'axios';
 import MarkdownRender from './markdown.render';

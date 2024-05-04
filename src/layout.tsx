@@ -1,4 +1,3 @@
-import React from 'react';
 import ResponsiveDrawer from './components/responsive.drawer';
 import Box from '@mui/material/Box/Box';
 import { Outlet } from 'react-router-dom';

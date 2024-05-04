@@ -1,4 +1,3 @@
-import React, { useEffect, useMemo, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 export default function TypingRoute() {
