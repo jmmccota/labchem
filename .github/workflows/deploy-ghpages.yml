@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Publish page
 
 on:
   push:
@@ -8,12 +8,28 @@ on:
 
 jobs:
   build:
-
+    name: Build and Deploy
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Check out repository code
+    - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Build and Deploy React app to GitHub Pages
-      uses: omkartapale/react-deployment-gh-pages@v1.0.0
+    - name: Install Node.js and npm
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+      
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Auto-build dist folder"
+        git push
