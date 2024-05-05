@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import PageComponent from './page.component';
 import Layout from './layout';
@@ -33,5 +33,5 @@ export default function AppRoutes() {
     },
   ];
 
-  return <RouterProvider router={createBrowserRouter(router)} />;
+  return <RouterProvider router={createHashRouter(router)} />;
 }
