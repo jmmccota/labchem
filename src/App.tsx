@@ -8,6 +8,9 @@ import {
 import { ThemeProvider } from '@mui/material';
 import '@fontsource/roboto/300.css';
 import { AppProvider } from './components/app.context';
+import axios from 'axios';
+
+axios.defaults.baseURL = import.meta.env.PROD ? '/labchem/' : '/';
 
 const queryClient = new QueryClient();
 const theme = responsiveFontSizes(
