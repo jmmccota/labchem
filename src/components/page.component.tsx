@@ -1,6 +1,6 @@
-import { PageContentType } from './types';
+import { PageContentType } from '../types';
 import axios from 'axios';
-import MarkdownRender from './markdown.render';
+import MarkdownRender from '../markdown.render';
 import { useQuery } from '@tanstack/react-query';
 import { Box, Typography } from '@mui/material';
 

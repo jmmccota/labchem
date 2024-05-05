@@ -3,10 +3,10 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import BookIcon from '@mui/icons-material/Book';
 import ResponsiveAppBar from './appbar.component';
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
 import {
-  Typography,
-  CssBaseline,
-  Box,
+  Typography,  
   Divider,
   Drawer,
   List,
@@ -18,11 +18,10 @@ import {
 } from '@mui/material';
 import { AppContext } from './app.context';
 import { Link } from 'react-router-dom';
+
 const drawerWidth = 260;
 
-export default function ResponsiveDrawer(
-  props: React.PropsWithChildren<unknown>
-) {
+export default function ResponsiveDrawer(props: React.PropsWithChildren<unknown>) {
   const { children } = props;
   const routerData = React.useContext(AppContext);
   const { pages, main } = routerData!;

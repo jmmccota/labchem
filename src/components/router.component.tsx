@@ -2,10 +2,10 @@ import React from 'react';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import PageComponent from './page.component';
-import Layout from './layout';
-import MainPage from './main.page';
-import BlogPage from './blog.page';
-import { AppContext } from './components/app.context';
+import Layout from '../layout';
+import MainPage from '../main.page';
+import BlogPage from '../blog.page';
+import { AppContext } from './app.context';
 
 export default function AppRoutes() {
   const routerData = React.useContext(AppContext);

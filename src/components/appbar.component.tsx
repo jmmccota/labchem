@@ -1,14 +1,9 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import {AppBar, Box, Toolbar, IconButton, Typography, Container, } from '@mui/material';
 import { AppContext } from './app.context';
 import { Link } from 'react-router-dom';
 
-function ResponsiveAppBar({ openMenu }: { openMenu: () => void }) {
+function ResponsiveAppBar({ openMenu }: { openMenu: VoidFunction }) {
   const routerData = React.useContext(AppContext);
   const { main } = routerData!;
 

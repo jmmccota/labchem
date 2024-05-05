@@ -2,8 +2,7 @@ import { BlogType, PageContentType } from './types';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import MarkdownRender from './markdown.render';
-import Box from '@mui/material/Box';
-import { Divider, Typography } from '@mui/material';
+import { Box, Divider, Typography } from '@mui/material';
 import Masonry from '@mui/lab/Masonry';
 
 function LoadBlogMd({ url }: { url: string }) {

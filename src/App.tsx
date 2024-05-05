@@ -1,4 +1,4 @@
-import Routes from './router.component';
+import Routes from './components/router.component';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
@@ -6,15 +6,16 @@ import {
   responsiveFontSizes
 } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material';
-import '@fontsource/roboto/300.css';
 import { AppProvider } from './components/app.context';
 import axios from 'axios';
 import { ErrorBoundary } from "react-error-boundary";
-
+import '@fontsource/roboto/300.css';
+import fallbackRender from './components/fallback.component';
 
 axios.defaults.baseURL = import.meta.env.PROD ? '/labchem/' : '/';
 
 const queryClient = new QueryClient();
+
 const theme = responsiveFontSizes(
   createTheme({
     palette: {
@@ -28,15 +29,6 @@ const theme = responsiveFontSizes(
     },
   })
 );
-
-function fallbackRender({ error }: any) {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre style={{ color: "red" }}>{error.message}</pre>
-    </div>
-  );
-}
 
 export default function App() {
   return (
