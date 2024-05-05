@@ -26,16 +26,19 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Upload dist
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-build
-        path: dist
+    # - name: Upload dist
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: app-build
+    #     path: dist
 
-    # - name: Commit and push changes
-    #   run: |
-    #     git config --local user.name github-actions
-    #     git config --local user.email github-actions@github.com
-    #     git add dist/
-    #     git commit -m "Auto-build dist folder"
-    #     git push
+    - name: ls
+      run: ls
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.name github-actions
+        git config --local user.email github-actions@github.com
+        git add dist/
+        git commit -m "Auto-build dist folder"
+        git push
