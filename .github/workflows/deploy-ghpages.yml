@@ -38,7 +38,7 @@ jobs:
     - name: Upload dist
       uses: actions/deploy-pages@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
         folder: docs
 
