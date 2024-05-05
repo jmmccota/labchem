@@ -9,6 +9,8 @@ import { ThemeProvider } from '@mui/material';
 import '@fontsource/roboto/300.css';
 import { AppProvider } from './components/app.context';
 import axios from 'axios';
+import { ErrorBoundary } from "react-error-boundary";
+
 
 axios.defaults.baseURL = import.meta.env.PROD ? '/labchem/' : '/';
 
@@ -27,15 +29,26 @@ const theme = responsiveFontSizes(
   })
 );
 
+function fallbackRender({ error }: any) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>{error.message}</pre>
+    </div>
+  );
+}
+
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
-        <AppProvider>
-          {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
-          <Routes />
-        </AppProvider>
-      </QueryClientProvider>
-    </ThemeProvider>
+    <ErrorBoundary fallbackRender={fallbackRender}>
+      <ThemeProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
+          <AppProvider>
+            {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
+            <Routes />
+          </AppProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
