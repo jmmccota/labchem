@@ -130,26 +130,26 @@ export default function ResponsiveDrawer(props: React.PropsWithChildren<unknown>
   const container = window.document.body;
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <CssBaseline />
       <Box
         sx={{
-          ml: { xs: 0, sm: `${drawerWidth}px` },
-          display: { xs: 'flex', sm: 'none' },
+          ml: { xs: 0, sm: 0, md: `${drawerWidth}px` },
+          display: { xs: 'flex', sm: 'flex', md: 'none' },
         }}
       >
         <ResponsiveAppBar openMenu={handleDrawerToggle} />
       </Box>
       <Toolbar
         sx={{
-          display: { xs: 'none', sm: 'flex' },
+          display: { xs: 'none', sm: 'none', md: 'flex' },
           backgroundColor: 'primary.main',
         }}
       />
 
       <Box
         component="nav"
-        sx={{ width: { xs: 0, sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { xs: 0, sm: 0, md: drawerWidth }, flexShrink: { md: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -163,7 +163,7 @@ export default function ResponsiveDrawer(props: React.PropsWithChildren<unknown>
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', sm: 'block', md: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -175,7 +175,7 @@ export default function ResponsiveDrawer(props: React.PropsWithChildren<unknown>
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', sm: 'none', md: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -189,8 +189,9 @@ export default function ResponsiveDrawer(props: React.PropsWithChildren<unknown>
       <Box
         component="main"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
+          mt: 1,
           height: '100%',
         }}
       >
