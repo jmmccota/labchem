@@ -26,20 +26,26 @@ jobs:
     - name: Build
       run: npm run build
 
-    # - name: Upload dist
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: app-build
-    #     path: ./dist
+    - name: Upload dist
+      uses: actions/upload-artifact@v4
+      with:
+        name: github-pages
+        path: ./dist
 
-    - name: Copy files to dist folder
-      run: mv dist/ docs/
+    # - name: Copy files to dist folder
+    #   run: mv dist/ docs/
 
-    - name: Commit and push changes
-      run: |
-        git checkout origin/gh-pages
-        git config --local user.name github-actions
-        git config --local user.email github-actions@github.com
-        git add docs/
-        git commit -m "Auto-build docs folder"
-        git push
+    - name: Upload dist
+      uses: actions/deploy-pages@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: docs
+
+    # - name: Commit and push changes
+    #   run: |
+    #     git config --local user.name github-actions
+    #     git config --local user.email github-actions@github.com
+    #     git add docs/
+    #     git commit -m "Auto-build docs folder"
+    #     git push
