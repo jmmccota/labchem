@@ -45,7 +45,7 @@ function BlogComponent({ title, content, date, imgUrls }: PageContentType) {
       {imgUrls && (
         <Masonry columns={4} spacing={2}>
           {imgUrls.map((i) => (
-            <Box component="img" key={i} src={i} />
+            <Box component="img" loading='lazy' key={i} src={i} />
           ))}
         </Masonry>
       )}
