@@ -33,7 +33,7 @@ jobs:
     #     path: ./dist
 
     - name: Copy files to dist folder
-      run: mv -r dist/ docs/
+      run: mv dist/ docs/
 
     - name: Commit and push changes
       run: |
