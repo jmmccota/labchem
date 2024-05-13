@@ -18,7 +18,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: https://jmmccota.github.io/labchem
+      url: ${{ vars.URL }}
 
     steps:
     - name: Checkout repository
