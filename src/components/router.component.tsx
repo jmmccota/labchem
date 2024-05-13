@@ -6,6 +6,7 @@ import Layout from '../layout';
 import MainPage from '../main.page';
 import BlogPage from '../blog.page';
 import { AppContext } from './app.context';
+import { ErrorComponent } from './error.component';
 
 export default function AppRoutes() {
   const routerData = React.useContext(AppContext);
@@ -19,6 +20,7 @@ export default function AppRoutes() {
     {
       path: '/',
       element: <Layout />,
+      errorElement: <ErrorComponent />,
       children: [
         ...mappedRoutes,
         {
