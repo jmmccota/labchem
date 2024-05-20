@@ -1,5 +1,6 @@
 export type PageContentType = {
-  title: string;
+  icon?: string;
+  title?: string;
   content: string;
   url?: string;
   date?: string | Date;

@@ -1,12 +1,11 @@
 import React from 'react';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import BookIcon from '@mui/icons-material/Book';
 import ResponsiveAppBar from './appbar.component';
+import { IconComponent, IconNames } from './icon.component';
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import {
-  Typography,  
+  Typography,
   Divider,
   Drawer,
   List,
@@ -14,7 +13,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Toolbar,
+  Toolbar
 } from '@mui/material';
 import { AppContext } from './app.context';
 import { Link } from 'react-router-dom';
@@ -101,12 +100,12 @@ export default function ResponsiveDrawer(props: React.PropsWithChildren<unknown>
       <Divider />
       <List>
         {pages &&
-          Object.entries(pages).map(([k, v], index) => (
+          Object.entries(pages).map(([k, v]) => (
             <ListItem key={k} disablePadding>
               <ListItemButton component={Link} to={k}>
                 {/* <Link to={k}> */}
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {v.icon && <IconComponent iconName={v.icon as IconNames} />}
                 </ListItemIcon>
                 <ListItemText primary={v.title} />
                 {/* </Link> */}

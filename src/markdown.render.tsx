@@ -1,6 +1,7 @@
-import ReactMarkdown from 'react-markdown';
-import RemarkMathPlugin from 'remark-math';
-import { MathJax, MathJaxContext } from 'better-react-mathjax';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import ReactMarkdown from "react-markdown";
+import RemarkMathPlugin from "remark-math";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 
 function MarkdownRender(props: any) {
   const newProps = {
