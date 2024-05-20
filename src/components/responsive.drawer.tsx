@@ -2,8 +2,6 @@ import React from 'react';
 import BookIcon from '@mui/icons-material/Book';
 import ResponsiveAppBar from './appbar.component';
 import { IconComponent, IconNames } from './icon.component';
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
 import {
   Typography,
   Divider,
@@ -15,6 +13,8 @@ import {
   ListItemText,
   Toolbar
 } from '@mui/material';
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
 import { AppContext } from './app.context';
 import { Link } from 'react-router-dom';
 
